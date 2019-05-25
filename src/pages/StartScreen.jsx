@@ -1,9 +1,11 @@
 import React from 'react';
 
-export default class StartScreen extends React.Component{
-    render(){
-        return(
-            <h1>Hola Mundo!</h1>
-        )
-    }
+import { blueGrey50 } from 'material-ui/styles/colors';
+
+export default function StartScreen() {
+  return (
+    <div className="col-md-offset-1">
+      <h1 style={{ backgroundColor: blueGrey50 }}> Hola Mundo! </h1>
+    </div>
+  );
 }
