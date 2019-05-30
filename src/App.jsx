@@ -1,21 +1,24 @@
-import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
+import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import StartScreen from './pages/StartScreen';
+
 import './App.css';
 
+// eslint-disable-next-line react/prefer-stateless-function
+class App extends Component {
+  // eslint-disable-next-line no-useless-constructor
+  constructor(props) {
+    super(props);
+  }
 
-function App() {
-  return (
-    <MuiThemeProvider>
-      <Router>
-        <Route exact path="/" component={StartScreen} />
-        {/* <Route exact path="/game-screen" component={GameScreen} /> */}
-        {/* <Route exact path="/end-game-screen" component={EndGameScreen} /> */}
-      </Router>
-    </MuiThemeProvider>
-  );
+  render() {
+    return (
+      <MuiThemeProvider>
+        {this.props.children}
+      </MuiThemeProvider>
+    );
+  }
 }
 
 export default App;
